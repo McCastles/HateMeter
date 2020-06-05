@@ -1,4 +1,3 @@
-
 import dash_html_components as html
 import dash_core_components as dcc
 
@@ -23,10 +22,13 @@ def load_layout(history_period_sec, histogram_period_sec):
                 id='histogram-interval-component',
                 interval=1000*histogram_period_sec,
                 n_intervals=0
-            )
+            ),
 
+            #test graph
+            dcc.Graph(
+                id='histogram-graph'
+            )
 
         ])
     )
 
-    
