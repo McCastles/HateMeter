@@ -1,0 +1,23 @@
+\babel@toc {polish}{}
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Opis projektu}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Temat projektu}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Opis problemu}{3}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Cel projektu}{3}{subsection.1.3}% 
+\contentsline {section}{\numberline {2}Etap 1 - Przygotowanie \IeC {\'s}rodowiska i danych}{3}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Opis}{3}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Pobieranie Danych}{4}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Budowa architektury}{4}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Przygotowanie do implementacji algorytm\IeC {\'o}w}{5}{subsection.2.4}% 
+\contentsline {section}{\numberline {3}Etap 2 - Budowa algorytm\IeC {\'o}w}{5}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Opis}{6}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Zadania}{6}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Kamienie milowe}{6}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.4}Parametry}{6}{subsection.3.4}% 
+\contentsline {subsection}{\numberline {3.5}Ryzyka}{7}{subsection.3.5}% 
+\contentsline {section}{\numberline {4}Etap 3 - Budowa strony internetowej i wizualizacja}{7}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}Opis}{7}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}Zadania}{7}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}Kamienie milowe}{8}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}Parametry}{8}{subsection.4.4}% 
+\contentsline {subsection}{\numberline {4.5}Ryzyka}{8}{subsection.4.5}% 

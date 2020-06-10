@@ -1,0 +1,261 @@
+\documentclass[a4paper,11pt, notitlepage ]{article}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{spverbatim}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\setcounter{page}{1}
+\rfoot{Strona \thepage \hspace{1pt} z \pageref{LastPage}}
+\selectlanguage{polish}
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{1cm}
+    \begin{center}\small
+    Politechnika Warszawska\\
+    Wydział Elektryczny
+    \end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+      \LARGE \textsc{\@title}
+         \end{center}
+     \linia
+    \vspace{0.5cm}
+    \begin{flushright}
+    \begin{minipage}{8cm}
+    \textit{\small Autorzy:}\\
+    \normalsize \textsc{\@author} \par
+    \end{minipage}
+    \end{flushright}
+    \vspace*{\stretch{6}}
+    \begin{center}
+    \@date
+    \end{center}
+  \end{titlepage}%
+}
+\makeatother
+\author{Aleksei Haidukevich, nr albumu 295233 \newline Jakub Korczakowski, nr albumu 291079 \newline Marharyta Kruk, nr albumu 295235 \newline Maciej Leszczyński, nr albumu 291085 \newline Piotr Rosa, nr albumu 291112\\[50ex]}
+\title{Statut Projektu v4.0}
+
+\frenchspacing
+
+\begin{document}
+  \maketitle
+  \setcounter{page}{2}
+  \tableofcontents
+  \newpage
+
+\section{Opis projektu}
+\subsection{Temat projektu}
+Stworzenie systemu do analizy sentymentów spółki na podstawie wpisów w mediach
+społecznościowych.
+
+\subsection{Opis problemu}
+Analiza sentymentów wiadomości jest stosunkowo nowym zagadnieniem, które staje się coraz bardziej popularne. Poprzez trafne określenie nacechowania emocjonalnego wiadomości klientów, spółki są w stanie zminimalizować ewentualne straty i zmaksymalizować zyski. Dzięki dokładnym badaniom firma wie, czego rzeczywiście chcą odbiorcy jej produktów/usług. Analiza sentymentów może być wykorzystywana w wielu rodzajach biznesów, a nawet w polityce (tworzenie sondaży). Jest ona obecnie stosowana przez przedsiębiorstwa takie jak Facebook (Facebook Insights), Google (Google Insights, Google Alerts), czy Hootsuite. Dodatkowym atutem przemawiającym za wykorzystywaniem jej jest dostępność dużej ilości darmowych danych w internecie, które po odpowiednim przetworzeniu są w stanie dostarczyć cenne informacje.
+
+\subsection{Cel projektu}
+Głównym celem projektu jest budowa systemu umożliwiającego analizę poziomu hejtu odnoszącego się do wybranych organizacji. Zbiór danych zostanie przez nas otrzymany z wpisów znajdujących się w mediach społecznościowych (Twitter, Reddit). Nasz system pozwoli badać, w jaki sposób formuje się sentyment wiadomości danej spółki. W przypadku nieplanowanego nagromadzenia się wiadomości o negatywnym sentymencie, będzie wysyłane ostrzeżenie, które może pozwolić na odpowiednio wczesną reakcję firmy. 
+
+\section{Etap 1 - Przygotowanie środowiska i danych}
+\textbf{czas: 4.11.2019 - 15.12.2019}
+\subsection{Opis} 
+W pierwszym etapie projektu najważniejszym celem będzie utworzenie narzędzi do zbierania danych z Twittera i Reddita. Zostaną one użyte w celu stworzenia zbioru danych pozwalającego na naukę i testowanie algorytmów. Pobrane wiadomości i nagłówki będą składowane w bazie danych. Ten etap prac zawiera również przygotowanie infrastruktury zdolnej analizować i przechowywać zebrane dane.
+
+\subsection{Pobieranie Danych}
+    \begin{description}
+        \item[Opis zadania] \hfill \\ Budowa programów pobierających dane z wybranych mediów społecznościowych (Twitter i Reddit).
+         
+        \item[Lista zadań pobocznych] \hfill 
+        \begin{enumerate}
+            \item Analiza dostępności API Twittera.
+            \item Analiza dostępności API Reddita.
+            \item Stworzenie programu pobierającego dane z Twittera.
+            \item Stworzenie programu pobierającego dane z Reddita.
+            \item Umożliwienie zapisu pobranych z Twittera danych do bazy danych.
+            \item Umożliwienie zapisu pobranych z Reddita danych do bazy danych.
+            \item Analiza dostępnych zbiorów opisanych klasami, pozwalających na testowanie algorytmu.
+        \end{enumerate}
+
+        \item[Kamień milowy] \hfill \\
+        Utworzenie wyselekcjonowanego zbioru danych pozwalającego na naukę i testowanie algorytmów.
+
+        \item[Parametry] \hfill \\ 
+        Zbiór danych musi zawierać 250 tweetów, 150 nagłówków z Reddita zbieranych codziennie przez 30 dni dla 10 organizacji(razem 75000 tweetów i 45000 nagłówków).
+        
+        Zbiór testowy musi zawierać 5000 tweetów i 3000 nagłówków, opisanych poprzez klasy pozwalające na sprawdzenie algorytmu.
+
+        \item[Ryzyka] \hfill \\ 
+        Ograniczona dostępność API serwisów społecznościowych.\\
+        Mitygacja: Automatyzacja zakładania kont dewloperskich, w celu ominięcia ograniczeń.
+
+        Brak zbioru pozwalającego na testowanie algorytmów analizujących sentyment.\\
+        Mitygacja: Ręczne opisanie zbioru testowego.
+    \end{description}
+
+\subsection{Budowa architektury}
+    \begin{description}
+        \item[Opis zadania] \hfill \\ Przygotowanie architektury systemu zdolnego składować i analizować pobrane wcześniej dane z mediów społecznościowych.
+         
+        \item[Lista zadań pobocznych] \hfill 
+        \begin{enumerate}
+            \item Analiza i wybór sposobu wdrożenia aplikacji (rozwiązania chmurowe).
+            \item Analiza dostępnej infrasturktury do przetwarzania danych.
+            \item Wybór odpowiedniej bazy do składowanych danych (porównanie SQL i noSQL).
+            \item Instalacja wybranej bazy.
+            \item Połączenie bazy danych z programami pobierającymi dane.
+            \item Pobranie danych do bazy danych.
+        \end{enumerate}
+
+        \item[Kamień milowy] \hfill \\
+        Utworzenie systemu pozwalającego na przetwarzanie i analizowanie pobranych danych.
+
+        % \item[Parametry] \hfill \\ 
+
+        \item[Ryzyka] \hfill \\ 
+        Ograniczona dostępność do chmury (Azure).\\
+        Mitygacja: Utworznie kolejnych kont w usłudze.
+    \end{description}
+   
+\subsection{Przygotowanie do implementacji algorytmów}
+    \begin{description}
+        \item[Opis zadania] \hfill \\ Analiza dostępnych algorytmów do analizy sentymentu oraz wykrywania anomalii i ocena ich przydatności w naszym projekcie.
+         
+        \item[Lista zadań pobocznych] \hfill 
+        \begin{enumerate}
+            \item Analiza i porównanie dostępnych algorytmów uczenia nienadzorowanego do analizy sentymentu.
+            \item Analiza i porównanie dostępnych algorytmów uczenia nadzorowanego do analizy sentymentu.
+            \item Analiza i porównanie dostępnych algorytmów wykrywania anomalii.
+            \item Analiza wymagań, jakie musi spełniać zbiór danych przeznaczony do uczenia i testowania algorytmu.
+            \item Analiza metod przetwarzania tekstu.
+        \end{enumerate}
+
+        \item[Kamień milowy] \hfill \\
+        Zdobycie wiedzy i opis dostępnych algorytmów.
+
+        % \item[Parametry] \hfill \\ 
+
+        % \item[Ryzyka] \hfill \\ 
+        
+    \end{description}    
+
+\section{Etap 2 - Budowa algorytmów}
+\textbf{czas: 15.12.2019 - 30.03.2020}
+
+\subsection{Opis} 
+W drugim etapie projektu najważniejszym celem będzie stworzenie oraz uczenie modelów do analizy sentymentów. Modele dla Twittera i Reddita
+będą w stanie określić sentyment wiadomości (dobry - zły - neutralny). Po stworzeniu tych modelów głównym celem będzie dokonanie analizy
+zebranych wiadomości dla kilku określonych haseł. W tym celu będzie stworzony jeszcze jeden model, przeznaczony do analizy rozkładów sentymentów
+i wykrywania anomalii. Ten etap jest również przeznaczony do stworzenia infrastruktury, która będzie w stanie ciągle analizować nowe dane.
+
+\subsection{Zadania}
+\begin{enumerate}
+    % \item Znalezienie zbioru testowego pozwalającego ocenić poziom precyzji analizy sentymentu
+    % \item Znalezienie zbiorów uczących. Zbiory mają zawierać co najmniej 10000 wyrazów.
+    \item Stworzenie oraz uczenie modelu na podstawie już znalezionych zbiorów do analizy sentymentów Twittera.
+    \item Stworzenie oraz uczenie modelu na podstawie już znalezionych zbiorów do analizy sentymentów Reddita.
+    \item Przeprowadzenie testów modelów na samodzielnie stworzonych zbiorach testowych.
+    \item Dokonanie analizy danych, zebranych w wyniku działania programów, stworzonych w poprzednim etapie, za pomocą modelu do analizy sentymentów (p.3-4)
+    \item Dokonanie analizy występowania anomalii. Stworzenie zbioru testowego z występującą anomalią.
+    \item Stworzenie modelu, który będzie w stanie na podstawie dokonanej wcześnie analizy (p.6) wykrywać anomalie w rozkładzie negatywnych wiadomości. Testowanie tego modelu na utworzonym wcześniej (p.7) zbiorze.
+\end{enumerate}
+
+\subsection{Kamienie milowe}
+\begin{enumerate}
+    \item Stworzenie modelów do określenia sentymentów wiadomości Twittera oraz Reddita
+    \item Stworzenie modelów do analizy określonych sentymentów w celu wykrywania anomalii
+\end{enumerate}
+
+\subsection{Parametry}
+\begin{enumerate}
+    \item Modele muszą określać sentymenty wiadomości z precyzją co najmniej 85\%.
+    \item Modele do wykrywania anomalii muszą mieć precyzję co najmniej 70\% przy sprawdzeniu zbiorów testowych
+    \item Zbiory testowe, zawierające w sobie wiadomości oraz sentymenty, stworzone sztucznie w taki sposób, aby zawierały w sobie anomalie — przeznaczony do testowania modelu wykrywania anomalii.
+\end{enumerate}
+
+\subsection{Ryzyka}
+\begin{enumerate}
+    \item Brak wystarczającej ilości danych do nauczenia modelu wykrywania anomalii.
+    \item Brak możliwości dokładnej analizy wiadomości pobranej z Reddita.
+
+\end{enumerate}
+\section{Etap 3 - Budowa strony internetowej i wizualizacja}
+\textbf{czas: 30.03.2020 - 27.04.2020}
+
+\subsection{Opis}
+W trzecim etapie projektu celem jest stworzenie medium pomiędzy wynikiem działania algorytmów i użytkownikiem. 
+Medium ma postać serwisu internetowego i służy do wizualizacji zebranych danych oraz wyników ich analizy.
+Serwis jest połączony z bazą danych, wytworzoną w poprzednich etapach.
+
+\subsection{Zadania}
+\begin{enumerate}
+    \item Wybranie technologii najbardziej pasującej do tworzenia stron webowych (np. Django, Flask).
+    \item Budowa struktury serwisu internetowego.
+    \item Stworzenie modułu wizualizacji na podstawie istniejących rozwiązań (np. Prophet library).
+    \item Integracja modułu wizualizacji do serwisu internetowego.
+    \item Połączenie modułu wizualizacji z bazą danych.
+    \item Automatyzacja odświeżania wyników wizualizacji na podstawie aktualnych danych z bazy.
+\end{enumerate}
+
+\subsection{Kamienie milowe}
+\begin{enumerate}
+    \item Stworzenie szkieletu serwisu internetowego
+    \item Reprezentacja danych w postaci wykresów na stronach serwisu internetowego. Wykresy powinny w sposób jawny wyróżniać anomalie w danych.
+\end{enumerate}
+\subsection{Parametry}
+\begin{enumerate}
+    \item Serwis internetowy składa się z przynajmniej 3 stron.
+    \item Wykresy przedstawiają dane z okresu 30 dni.
+\end{enumerate}
+
+\subsection{Ryzyka}
+\begin{enumerate}
+    \item Problem połączenia serwisu internetowego z bazą danych.\\
+Mitygacja: Użycie rozwiązań istniejących, w których back-end i baza danych są połączone w sposób automatyczny.
+\end{enumerate}
+\end{document}

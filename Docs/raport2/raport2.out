@@ -1,0 +1,25 @@
+\BOOKMARK [1][-]{section.1}{Etap 1 - Zbieranie danych}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Opis}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Zadania}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Analiza dostepnosci API medi\363w spo\233ecznosciowych.}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{Analiza dostepnej infrasturktury do przetwarzania danych.}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.3}{Analiza i wyb\363r sposobu wdrozenia aplikacji \(rozwiazania chmurowe\).}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.4}{Wyb\363r odpowiedniej bazy do sk\233adowanych danych \(por\363wnanie SQL i noSQL\).}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.5}{Stworzenie programu pobierajacego dane z Twittera.}{subsection.1.2}% 8
+\BOOKMARK [3][-]{subsubsection.1.2.6}{Stworzenie programu pobierajacego dane z Facebooka.}{subsection.1.2}% 9
+\BOOKMARK [3][-]{subsubsection.1.2.7}{Instalacja wybranej bazy.}{subsection.1.2}% 10
+\BOOKMARK [3][-]{subsubsection.1.2.8}{Po\233aczenie bazy danych z programami pobierajacymi dane.}{subsection.1.2}% 11
+\BOOKMARK [3][-]{subsubsection.1.2.9}{Pobranie danych do bazy danych.}{subsection.1.2}% 12
+\BOOKMARK [3][-]{subsubsection.1.2.10}{Analiza dostepnych zbior\363w opisanych klasami, pozwalajacych na testowanie algorytmu.}{subsection.1.2}% 13
+\BOOKMARK [2][-]{subsection.1.3}{Wykonanie zadan z pierwszego kamienia milowego}{section.1}% 14
+\BOOKMARK [1][-]{section.2}{Etap 2 - Przetwarzanie danych}{}% 15
+\BOOKMARK [2][-]{subsection.2.1}{Opis}{section.2}% 16
+\BOOKMARK [2][-]{subsection.2.2}{Zadania}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Budowa infrastruktury do przetwarzania danych}{subsection.2.2}% 18
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Instalacja narzedzi do przetwarzania danych}{subsection.2.2}% 19
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Baza Danych}{subsection.2.2}% 20
+\BOOKMARK [3][-]{subsubsection.2.2.4}{Potok przetwarzania danych w projekcie}{subsection.2.2}% 21
+\BOOKMARK [3][-]{subsubsection.2.2.5}{Udoskonalenie programu do pobierania danych z Twittera}{subsection.2.2}% 22
+\BOOKMARK [3][-]{subsubsection.2.2.6}{Stworzenie modelu do analizy sentyment\363w}{subsection.2.2}% 23
+\BOOKMARK [3][-]{subsubsection.2.2.7}{Stworzenie programu do pobierania danych z Facebooka}{subsection.2.2}% 24
+\BOOKMARK [2][-]{subsection.2.3}{Wykonanie zadan z drugiego kamienia milowego}{section.2}% 25

@@ -1,0 +1,158 @@
+\documentclass[a4paper,11pt, notitlepage ]{article}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{listings}
+\usepackage{spverbatim}
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\setcounter{page}{1}
+\rfoot{Strona \thepage \hspace{1pt} z \pageref{LastPage}}
+\selectlanguage{polish}
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{1cm}
+    \begin{center}\small
+    Politechnika Warszawska\\
+    Wydział Elektryczny
+    \end{center}
+    \vspace{3cm}
+    \noindent\linia
+    \begin{center}
+      \LARGE \textsc{\@title}
+         \end{center}
+     \linia
+    \vspace{0.5cm}
+    \begin{flushright}
+    \begin{minipage}{8cm}
+    \textit{\small Autorzy:}\\
+    \normalsize \textsc{\@author} \par
+    \end{minipage}
+    \end{flushright}
+    \vspace*{\stretch{6}}
+    \begin{center}
+    \@date
+    \end{center}
+  \end{titlepage}%
+}
+\makeatother
+\author{Aleksei Haidukevich, nr albumu 295233 \newline Jakub Korczakowski, nr albumu 291079 \newline Marharyta Kruk, nr albumu 295235 \newline Maciej Leszczyński, nr albumu 291085 \newline Piotr Rosa, nr albumu 291112}
+\title{Raport z pierwszej części projektu}
+
+\frenchspacing
+
+\begin{document}
+\maketitle
+\setcounter{page}{2}
+\tableofcontents
+\newpage
+
+\section{Etap 1 - Zbieranie danych}
+\textbf{czas: 4.11.2019 - 15.12.2019}
+\subsection{Opis} 
+W pierwszym etapie projektu najważniejszym celem było utworzenie narzędzi do zbierania danych z Twittera i Reddita. Zostaną one użyte w celu stworzenia zbioru danych pozwalającego na naukę i testowanie algorytmów. Pobrane wiadomości i nagłówki będą składowane w bazie danych. Ten etap prac zawierał również przygotowanie infrastruktury zdolnej analizować i przechowywać zebrane dane.
+\subsection{Zadania}
+\begin{enumerate}
+    \item \textbf{Analiza dostępności API mediów społecznościowych.}\\
+    Po przeanalizowaniu API zdecydowaliśmy się wykorzystać media społecznościowe \textbf{Twitter} i \textbf{Facebook}. API Twittera jest bardzo rozwinięte i pozwala na swobodny dostęp do tweetów, nawet w przypadku darmowej wersji konta. Zdecydowaliśmy się pobierać tweety wykorzystując bibliotekę Pythona - \textbf{Tweepy}. \textbf{COŚ O FACEBBOOKU? COŚ O FACEBBOOKU? COŚ O FACEBBOOKU? COŚ O FACEBBOOKU? COŚ O FACEBBOOKU? COŚ O FACEBBOOKU?}
+    \item \textbf{Analiza i wybór sposobu wdrożenia aplikacji (rozwiązania chmurowe).} \\
+    Po analizie potrzeb naszego projektu zdecydowaliśmy się wykorzystać rozwiązanie chmurowe, ponieważ pozwalają one na zapewnienie dostępu do zasobów projektowych(takich jak bazy danych czy maszyny wirtualne) dla wszystkich pracujących nad projektem.
+    
+    Wśród dostawców infrastruktury chmurowej można wyróżnić dwie firmy, które oferują darmowe środki dla studentów. Są to Amazon (AWS) oraz Microsoft (Azure). Z powodu mniejszych możliwości oraz mniejszej ilości środków dostępnych na patformie AWS zdecydowaliśmy się wybrać platformę Azure.
+    
+    W obrębie tej platformy oprócz klasycznych maszyn wirtualnych dostępne są rozwiązania docelowe przeznaczone do przetwarzania dużych ilości danych, należą do nich:
+    \begin{itemize}
+        \item HDInsight,
+        \item Azure Databricks,
+        \item Azure Data Lake Services.
+    \end{itemize}
+    
+    Pomimo tego, że te usługi znacznie ułatwają budowę projektów nie zdecydowaliśmy się na ich użycie ze względu na wysoką cenę. Planujemy używać maszyn wirtualnych i za pomocą Dockera, a w przyszłości Kubertenesa zbudować infrastrukturę projektu.
+
+    \item \textbf{Analiza dostępnej infrasturktury do przetwarzania danych.}
+    W docelowej aplikacji przetwarzającej dane w czasie rzeczywistym planujemy użyć:
+    \begin{description}
+        \item[Apache Kafka] do pobierania tweetów w czasie rzeczywistym,
+        \item[Apache Spark] do przetwarzania danych i uruchamiania modeli,
+        \item[MS SQL] do przechowywania tweetów. 
+    \end{description}
+
+    Elementy architektury aplikacji prawdopodobnie ulegną jeszcze zmianie podczas dalszego rozwoju projektu.
+    \item \textbf{Wybór odpowiedniej bazy do składowanych danych (porównanie SQL i noSQL).} \\
+    Do składowania historycznych danych w naszym projekcie będziemy wykorzystywać bazę SQL ze względu na szybkość dostępu do danych.
+    \item \textbf{Instalacja wybranej bazy.} \\
+    Pobrane tweety składujemy w bazie SQL znajdującej się na platformie Azure. Obecnie bazy danych pomieścić może do 2GB danych, jednak w przypadku gdy potrzebne nam będzie więcej przestrzeni możemy w każdej chwili zwiększyć pojemność bazy. Jest to jedna z zalet użycia chmury. Baza danych dostępna jest pod statycznym adresem IP, więc jest łatwo dostępna dla każdego. Konieczne jest jedynie dostosowanie zapory sieciowej w celu umożliwienia dostępu.
+    \item \textbf{Stworzenie programu pobierającego dane z Twittera.}\\
+    Korzystając z biblioteki \textbf{Tweepy} udało nam się stworzyć skrypt pobierający wpisy z Twittera dotyczące wybranego słowa kluczowego. API Twittera pozwala na pobieranie naprawdę wielu szczegółów dotyczących wpisów, jednak do naszych celów nie potrzebujemy ich wszystkich. Zdecydowaliśmy się na pobieranie: ID tweeta, datę jego stworzenia, nazwę użytkownika oraz zawartość tweeta.\\
+    Pobrane dane przechowujemy w tabelach, osobno dla każdej firmy, z dodatkową kolumną Sentyment, która mówi o tym, czy przesłanie wiadomości jest negatywne, czy pozytywne.\\
+    Skrypt ten pobiera dane w interwałach czasowych, przy czym nie wszystkie tweety są zapisywane, a losowana jest jedynie część z nich. Wynika to z faktu, że często pojawia się więcej wpisów niż się spodziewaliśmy, a możemy nie poradzić sobie ze zbyt dużym zbiorem danych.
+    \item \textbf{Stworzenie programu pobierającego dane z Reddita.}
+    \item \textbf{Połączenie bazy danych z programami pobierającymi dane.}\\
+    Serwer bazodanowy działa na platformie \textbf{Azure}. W przypadku danych z Twittera, łączenie z serwerem odbywa się przy wykorzystaniu biblioteki \textbf{pyodbc}. Serwer bazodanowy na Azure posiada statyczny adres, dlatego łączenie się z nią nie jest skomplikowane. W konfiguracji połączenie trzeba podać odpowiedni login, hasło, nazwę bazy danych oraz nazwę sterownika w naszym systemie, który zostanie wykorzystany do tego połączenia. Zazwyczaj sterownik ten jest już zainstalowany, wystarczy jedynie odnaleźć jego nazwę.
+    \item \textbf{Pobranie danych do bazy danych.}\\
+    Baza danych z której korzystamy jest bazą SQL-ową. Po nawiązaniu połączenia, polecenia wykonywane są jak w przypadku korzystania z bazy danych lokalnie. Dane będą pobierane do bazy danych w czasie rzeczywistym za pomocą opracowanych programów.
+    \item \textbf{Analiza dostępnych zbiorów opisanych klasami, pozwalających na testowanie algorytmu.}
+\end{enumerate}
+\subsection{Kamienie milowe:}
+\begin{enumerate}
+    \item Utworzenie wyselekcjonowanego zbioru danych pozwalającego na naukę i testowanie algorytmów.
+\end{enumerate}
+\subsection{Parametry}
+\begin{enumerate}
+    \item Zbiór danych musi zawierać 250 tweetów, 150 nagłówków z Reddita zbieranych codziennie przez 30 dni dla 10 organizacji(razem 75000 tweetów i 45000 nagłówków).
+    \item Zbiór testowy musi zawierać 5000 tweetów i 3000 nagłówków, opisanych poprzez klasy pozwalające na sprawdzenie algorytmu.
+\end{enumerate}
+\subsection{Ryzyka:}
+\begin{enumerate}
+    \item Ograniczona dostępność API serwisów społecznościowych.\\
+ Mitygacja: Automatyzacja zakładania kont dewloperskich, w celu ominięcia ograniczeń.
+ \item Brak zbioru pozwalającego na testowanie algorytmów analizujących sentyment.\\
+ Mitygacja: Ręczne opisanie zbioru testowego.
+\end{enumerate}
+
+\end{document}
+% Pogrubiałem takie rzeczy jak Tweepy, Twitter itp. a nie wiem czy to ma sens.
