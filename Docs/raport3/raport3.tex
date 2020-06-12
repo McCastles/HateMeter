@@ -96,7 +96,7 @@
 \subsection{Opis} 
 W pierwszym etapie projektu najważniejszym celem było utworzenie narzędzi do zbierania danych z Twittera i Reddita. Zostaną one użyte w celu stworzenia zbioru danych pozwalającego na naukę i testowanie algorytmów. Pobrane wiadomości i nagłówki będą składowane w bazie danych. Ten etap prac zawierał również przygotowanie infrastruktury zdolnej analizować i przechowywać zebrane dane.
 \subsection{Zadania}
-    \subsubsection{Analiza dostępności API mediów społecznościowych.}
+    \subsubsection{Analiza dostępności API mediów społecznościowych}
     Odpowiedzialni: \textbf{Piotr Rosa, Aleksei Haidukevich}\\
     Po przeanalizowaniu API zdecydowaliśmy się wykorzystać media społecznościowe \textbf{Twitter} i \textbf{Facebook}. API Twittera jest bardzo rozwinięte i pozwala na swobodny dostęp do tweetów, nawet w przypadku darmowej wersji konta. Zdecydowaliśmy się pobierać tweety wykorzystując bibliotekę Pythona - \textbf{Tweepy}. W przypadku Facebooka korzystamy z programu \textbf{FacePager}. Jest to program pozwalający pobierać wszystkie posty z wybranej strony i zapisać je do pliku z rozszerzeniem csv. Opcjonalna jest dodatkowa konwersja do JSON. Posty można pobierać z całego okresu istnienia strony.
     \subsubsection{Analiza dostępnej infrasturktury do przetwarzania danych.} 
@@ -109,7 +109,7 @@ W pierwszym etapie projektu najważniejszym celem było utworzenie narzędzi do 
     \end{description}
 
     Elementy architektury aplikacji prawdopodobnie ulegną jeszcze zmianie podczas dalszego rozwoju projektu.
-    \subsubsection{Analiza i wybór sposobu wdrożenia aplikacji (rozwiązania chmurowe).} 
+    \subsubsection{Analiza i wybór sposobu wdrożenia aplikacji (rozwiązania chmurowe)} 
     Odpowiedzialni: \textbf{Jakub Korczakowski, Maciej Leszczyński}\\
     Po analizie potrzeb naszego projektu zdecydowaliśmy się wykorzystać rozwiązanie chmurowe, ponieważ pozwala one na zapewnienie dostępu do zasobów projektowych(takich jak bazy danych czy maszyny wirtualne) dla wszystkich pracujących nad projektem.
     
@@ -123,27 +123,27 @@ W pierwszym etapie projektu najważniejszym celem było utworzenie narzędzi do 
     \end{itemize}
     
     Pomimo tego, że te usługi znacznie ułatwają budowę projektów nie zdecydowaliśmy się na ich użycie ze względu na wysoką cenę. Planujemy używać maszyn wirtualnych i za pomocą Dockera, a w przyszłości Kubertenesa zbudować infrastrukturę projektu.
-    \subsubsection{Wybór odpowiedniej bazy do składowanych danych (porównanie SQL i noSQL).} 
+    \subsubsection{Wybór odpowiedniej bazy do składowanych danych (porównanie SQL i noSQL)} 
     Odpowiedzialni: \textbf{Jakub Korczakowski, Maciej Leszczyński}\\
-    Do składowania historycznych danych w naszym projekcie będziemy wykorzystywać bazę SQL ze względu na szybkość dostępu do danych.
-    \subsubsection{Stworzenie programu pobierającego dane z Twittera.}
+    Do składowania historycznych danych w naszym projekcie będziemy wykorzystywać bazę SQL ze względu na szybkość dostępu do danych.
+    \subsubsection{Stworzenie programu pobierającego dane z Twittera}
     Odpowiedzialny: \textbf{Piotr Rosa}\\
     Korzystając z biblioteki \textbf{Tweepy} udało nam się stworzyć skrypt pobierający wpisy z Twittera dotyczące wybranego słowa kluczowego. API Twittera pozwala na pobieranie naprawdę wielu szczegółów dotyczących wpisów, jednak do naszych celów nie potrzebujemy ich wszystkich. Zdecydowaliśmy się na pobieranie: ID tweeta, datę jego stworzenia, nazwę użytkownika oraz zawartość tweeta.\\
     Pobrane dane przechowujemy w tabelach, osobno dla każdej firmy, z dodatkową kolumną Sentyment, która mówi o tym, czy przesłanie wiadomości jest negatywne, czy pozytywne.\\
     Skrypt ten pobiera dane w interwałach czasowych, przy czym nie wszystkie tweety są zapisywane, a losowana jest jedynie część z nich. Wynika to z faktu, że często pojawia się więcej wpisów niż się spodziewaliśmy, a możemy nie poradzić sobie ze zbyt dużym zbiorem danych.
-    \subsubsection{Stworzenie programu pobierającego dane z Facebooka.}
+    \subsubsection{Stworzenie programu pobierającego dane z Facebooka}
     Odpowiedzialny: \textbf{Aleksei Haidukevich}\\
     Pobieranie danych z Facebooka przy użyciu programu FacePager pozwala na dostęp do danych niezależnie od dat powstania postów. Dzięki temu, uruchamiając program co określony czas dla wybranych stron, otrzymujemy pliki csv, z których dane przetwarzane są przy użyciu języka Python. Interesujące nas dane są analogiczne do tych w przypadku Twittera.
-    \subsubsection{Instalacja wybranej bazy.}
+    \subsubsection{Instalacja wybranej bazy}
     Odpowiedzialny: \textbf{Jakub Korczakowski}\\
     Pobrane tweety składujemy w bazie SQL znajdującej się na platformie Azure. Obecnie bazy danych pomieścić może do 2GB danych, jednak w przypadku gdy potrzebne nam będzie więcej przestrzeni możemy w każdej chwili zwiększyć pojemność bazy. Jest to jedna z zalet użycia chmury. Baza danych dostępna jest pod statycznym adresem IP, więc jest łatwo dostępna dla każdego. Konieczne jest jedynie dostosowanie zapory sieciowej w celu umożliwienia dostępu.
-    \subsubsection{Połączenie bazy danych z programami pobierającymi dane.}
+    \subsubsection{Połączenie bazy danych z programami pobierającymi dane}
     Odpowiedzialny: \textbf{Jakub Korczakowski}\\
     Serwer bazodanowy działa na platformie \textbf{Azure}. Zarówno dla danych z Twittera, jak i z Facebooka, łączenie z serwerem odbywa się przy wykorzystaniu biblioteki \textbf{pyodbc}. Serwer bazodanowy na Azure posiada statyczny adres, dlatego łączenie się z nią nie jest skomplikowane. W konfiguracji połączenie trzeba podać odpowiedni login, hasło, nazwę bazy danych oraz nazwę sterownika w naszym systemie, który zostanie wykorzystany do tego połączenia. Zazwyczaj sterownik ten jest już zainstalowany, wystarczy jedynie odnaleźć jego nazwę.
-    \subsubsection{Pobranie danych do bazy danych.}
+    \subsubsection{Pobranie danych do bazy danych}
     Odpowiedzialny: \textbf{Maciej Leszczyński}\\
     Baza danych z której korzystamy jest bazą SQL-ową. Po nawiązaniu połączenia, polecenia wykonywane są jak w przypadku korzystania z bazy danych lokalnie. Dane będą zapisywane w bazie danych w czasie rzeczywistym za pomocą opracowanych programów.
-    \subsubsection{Analiza dostępnych zbiorów opisanych klasami, pozwalających na testowanie algorytmu.} 
+    \subsubsection{Analiza dostępnych zbiorów opisanych klasami, pozwalających na testowanie algorytmu} 
     Odpowiedzialna: \textbf{Marharyta Kruk}\\
     Znaleziony został zbiór pozwalający na trenowanie oraz testowanie algorytmu. Zbiór zawiera 1600000 opisanych tweetów. Dla każdego tweetu został obliczony sentyment. 
     
@@ -151,7 +151,7 @@ W pierwszym etapie projektu najważniejszym celem było utworzenie narzędzi do 
     
 
 \subsection{Wykonanie zadań z pierwszego kamienia milowego}
-Podczas tego etapu nie byliśmy w stanie wykonać wszystkich zadań, które założyliśmy w statucie projektu. Udało nam się rozpocząć budowę modelu oraz znaleźć odpowiedni zbiór treningowy, pozwalający na analizę sentymentu. Udało się nam również poznać API Twittera oraz rozpocząć pracę nad programami pobierającymi dane. Próba wykorzystania wiadomości z Reddita zakończyła się niepowodzeniem ze względu na brak odpowiednich danych w serwisie. Trudniejsze niż przewidywaliśmy okazało się również zbudowanie klastra na platformie MS Azure. Potrzebowaliśmy więcej czasu, aby zapoznać się z możliwościami platformy, co spowodowało przesunięcie się pracy.
+Podczas tego etapu nie byliśmy w stanie wykonać wszystkich zadań, które założyliśmy w statucie projektu. Udało nam się rozpocząć budowę modelu oraz znaleźć odpowiedni zbiór treningowy, pozwalający na analizę sentymentu. Udało się nam również poznać API Twittera oraz rozpocząć pracę nad programami pobierającymi dane. Próba wykorzystania wiadomości z Reddita zakończyła się niepowodzeniem ze względu na brak odpowiednich danych w serwisie. Trudniejsze niż przewidywaliśmy okazało się również zbudowanie klastra na platformie MS Azure. Potrzebowaliśmy więcej czasu, aby zapoznać się z możliwościami platformy, co spowodowało przesunięcie się pracy.
 
 \section{Etap 2 - Przetwarzanie danych}
 \textbf{czas: 7.01.2020 - 31.03.2020}
@@ -183,7 +183,7 @@ W drugim etapie do najważniejszych celów należą cele niezrealizowane poprawn
     Odpowiedzialny: \textbf{Jakub Korczakowski}\\
     \begin{description}
         \item[Apache Hadoop] Został zainstalowany na klastrze. Wartość replikacji plików została zmieniona na \textbf{2} ze względu na ilość dostępnych DataNode.
-        \item[YARN] Został skonfigurowany w klastrze.
+        \item[YARN] Został skonfigurowany w klastrze.
         \item[Apache Spark]  Został zainstalowany na klastrze oraz skonfigurowany w trybach działania \textbf{standalone} oraz poprzez  \textbf{YARN}. Został połączony ze środowiskiem \textbf{Hadoop}.
         \item[MongoDB] Baza została zainstalowana na maszynie \textbf{hadoop-master}. Została skonfigurowana w sposób umożliwiający odwołanie się do niej z sieci lokalnej(poprzez ip \textbf{10.0.2.4}). Poprzez odpowiednie opcje konfiguracyjne możliwe jest połączenie z \textbf{Apache Spark}.
         \item[Apache Kafka] Broker Apache Kafka został zainstalowany jako klaster na wszystkich maszynach. Dodatkowo został zainstalowany Apache Zookeeper, który nadzoruje działanie brokera. 
@@ -298,25 +298,38 @@ W drugim etapie do najważniejszych celów należą cele niezrealizowane poprawn
 \subsection{Wykonanie zadań z drugiego kamienia milowego}
 W statucie błędnie założyliśmy, że utworzenie infrasturuktury oraz potoku danych zajmie nam tylko czas na początku projektu. Dzięki wcześniejszemu poznaniu platformy Azure udało nam się stworzyć klaster zdolny przetwarzać nasze dane. Poczyniliśmy również duże postępy w kierunku skończenia potoku danych. Udało nam się również stworzyć model analizy sentymentu. W statucie nie przewidzieliśmy głównie nakładu pracy potrzebnego do wykonania zadań z pierwszego etapu, mocno go zaniżając. Z drugiej strony zakładaliśmy, że na budowę algorytmu potrzebna będzie nam uwaga całego zespołu przez cały drugi etap, co okazało się przecenieniem ilości czasu potrzebnego na wykonanie tego zadania. W kolejnym, ostatnim etapie kluczowe będzie dokończenie przetwarzania danych oraz budowa aplikacji prezentującej nasze wyniki.
 
-\section{Etap 1 - Zbieranie danych}
+\section{Etap 3 - Prace końcowe}
 \textbf{czas: 4.11.2019 - 15.12.2019}
 \subsection{Opis}
 Ostatni etap projektu to dopracowanie istniejących rozwiązań, stworzenie ostatnich potrzebnych programów oraz połączenie wszystkich komponentów. W tym etapie zajęliśmy się przetwarzaniem strumieniowym oraz aplikacją prezentującą.
 \subsection{Zadania}
-    \subsubsection{Pobieranie tweetów w czasie rzeczywistym.}
+    \subsubsection{Pobieranie tweetów w czasie rzeczywistym}
     Odpowiedzialny: \textbf{Piotr Rosa}\\
     Został stworzony potok przetwarzania dla tweetów w czasie rzeczywistym. 
     Wykorzystując bibliotekę Pythona Tweepy powstał skrypt który otwiera połączenie z Twitterem i nasłuchuje tweetów na wybrane przez nas tematy. Następnie z postów które otrzymujemy wyciągamy interesujące nas informacje - id posta, użytkownik który go dodał, data publikacji oraz jego treść. Następnie informacje te publikowane są na serwer Kafka, skąd mogą zostać pobrane do dalszego przetwarzania. Publikacja na serwer Kafka odbywa się z wykorzystaniem biblioteki Pythona kafka-python.
     
-    \subsection{Pobieranie i przetwarzanie tweetów z Kafki.}
+    \subsubsection{Pobieranie i przetwarzanie tweetów z Kafki}
     Odpowiedzialny: \textbf{Piotr Rosa, Aleksei Haidukevich}\\
     Kolejny program który został stworzony w ramach tego kamienia milowego odpowiedzialny jest za pobieranie wiadomości z Kafki, a następnie ich przetwarzanie. Do tego celu wykorzystana została biblioteka pyspark.streaming oraz pyspark.streaming.kafka. Tweety pobierane są z tematu w dziesięcio sekundowych interwałach, a następnie są przetwarzane. Pierwszym krokiem przetwarzania jest rozdzielenie tweetów tematycznie, ze względu na firmy których one dotyczą. Krok ten mógł zostać zrealizowany również podczas pobierania tweetów z Twittera i publikacji ich do Kafki - mogły być one publikowane do różnych tematów. Podczas pobierania nie było jednak informacji które tweety dotyczą których firm, więc musiałaby zostać wykonana ta sama operacja sprawdzania. Uznaliśmy, że efektywniej będzie sprawdzać to po pobraniu z Kafki, z wykorzystaniem Sparka. Po rozdzieleniu tweetów dokonywana jest predykcja ich sentymentu przy użyciu stworzonego wcześniej modelu. Dodawane są informacje o wyniku tweeta oraz sentymecie, który został określony na jego podstawie. Dane w takiem postaci zapisywane są do bazy danych Mongo, przy czym każda firma ma oddzielną kolekcję.
     
-    \subsection{Przetworzenie danych historycznych.}
+    \subsubsection{Przetworzenie danych historycznych}
     Odpowiedzialny: \textbf{Piotr Rosa}\\
     Stworzony został program który przetwarza tweety zbierane już od początkowych faz projektu. Ze względu na brak modelu, tweety nie mogły zostać przetworzone i nie mieliśmy informacji o ich sentymencie. Postanowiliśmy nie zapisywać tych danych w bazie Mongo, a w postaci plików z rozszerzeniem .avro. Teraz, gdy model już istnieje możliwe jest przetworzenie tych danych. Aby usprawnić działanie tego procesu wykorzystujemy Sparka. Program iteruje po plikach w systemie HDFS, zawierających historyczne wpisy, wczytuje je oraz dokonuje predykcji sentymentu dla każdego wpisu. Podobonie jak w przypadku przetwarzania strumieniowego, do każdego tweeta dołączana jest informacja o jego wyniku oraz sentymencie, a następnie w takiej formie zapisywany jest do odpowiedniej kolecji w Mongo.
+    
+    \subsubsection{Budowa aplikacji do wizualizacji}
+    Odpowiedzialny: \textbf{Aleksei Haidukevich, Maciej Leszczyński, Marharyta Kruk}\\
 
-\subsection{Wykonanie zadań z pierwszego kamienia milowego}
+    
+    Aplikacja przedstawiająca wyniki naszych działań została stworzona w języku Python z wykorzystaniem biblioteki Plotly Dash. Została ona uruchomiona korzystając z serwera webowego Flask na maszynie hadoop-worker-2. Aplikacja obejmuje dostanie się do danych z bazy danych oraz przekazaniem ich do odpowiednich funkcji odpowiedzialnych za powstanie wykresów.
+    \newline
+    \newline
+    Aplikacja łączy się z bazą MongoDB za pomocą biblioteki pymongo, i pobiera dane, znajdującę się w kolekcjach "histogramtest" oraz "tweetsentiment" z worker-1. Co 20 sekund zbiera wszystkie tweety dopisane do bazy w tym czasie, aby zliczać ich ilość, oraz robi to samo co minutę aby przedstawić dystrybucję ilości tweetów w trakcie ostatnich 5 minut.
+    \newline
+    \newline
+    Wykresy, które stworzyliśmy obejmują zarówno wizualizację na żywo, jak i przedstawienie danych historycznych. Wykresy "live" przedstawiają liczbę i sentyment tweetów w zależności od firmy (od czasu uruchomienia aplikacji), sentyment tweetów w ostatnich 5 minutach oraz wykresy kołowe z podziałem na firmy i sentyment wszystkich tweetów. Wykresy obejmujące dane historyczne pokazują liczbę i sentyment tweetów w zależności od dnia (od początku zbierania danych) oraz ze względu na dzień tygodnia. Dodatkowo w aplikacji zostały umieszczone przyciski pozwalające wybrać firmę, która nas interesuje; dla tej firmy zostaną pokazane wyżej wymienione wykresy szczegółowe.
+    
+    
+% \subsubsection{Budowa aplikacji}
 
 % \subsection{Kamienie milowe:}
 % \begin{enumerate}
