@@ -326,9 +326,30 @@ Ostatni etap projektu to dopracowanie istniejących rozwiązań, stworzenie osta
     Aplikacja łączy się z bazą MongoDB za pomocą biblioteki pymongo, i pobiera dane, znajdującę się w kolekcjach "histogramtest" oraz "tweetsentiment" z worker-1. Co 20 sekund zbiera wszystkie tweety dopisane do bazy w tym czasie, aby zliczać ich ilość, oraz robi to samo co minutę aby przedstawić dystrybucję ilości tweetów w trakcie ostatnich 5 minut.
     \newline
     \newline
-    Wykresy, które stworzyliśmy obejmują zarówno wizualizację na żywo, jak i przedstawienie danych historycznych. Wykresy "live" przedstawiają liczbę i sentyment tweetów w zależności od firmy (od czasu uruchomienia aplikacji), sentyment tweetów w ostatnich 5 minutach oraz wykresy kołowe z podziałem na firmy i sentyment wszystkich tweetów. Wykresy obejmujące dane historyczne pokazują liczbę i sentyment tweetów w zależności od dnia (od początku zbierania danych) oraz ze względu na dzień tygodnia. Dodatkowo w aplikacji zostały umieszczone przyciski pozwalające wybrać firmę, która nas interesuje; dla tej firmy zostaną pokazane wyżej wymienione wykresy szczegółowe.
+    Wykresy, które stworzyliśmy obejmują zarówno wizualizację na żywo, jak i przedstawienie danych historycznych. Wykresy live przedstawiają liczbę i sentyment tweetów w zależności od firmy (od czasu uruchomienia aplikacji), sentyment tweetów w ostatnich 5 minutach oraz wykresy kołowe z podziałem na firmy i sentyment wszystkich tweetów. Wykresy obejmujące dane historyczne pokazują liczbę i sentyment tweetów w zależności od dnia (od początku zbierania danych) oraz ze względu na dzień tygodnia. Dodatkowo w aplikacji zostały umieszczone przyciski pozwalające wybrać firmę, która nas interesuje; dla tej firmy zostaną pokazane wyżej wymienione wykresy szczegółowe.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1 \textwidth]{fedex.png}
+        \caption{Zrzut ekranu przedstawiający działającą aplikację. Firma dla której przedstawione są wykresy to FedEx. Widoczny jest wzrost negatywnych wpisów w okolicy 22 maja.}
+        \label{fig:fedex}
+    \end{figure}
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=1 \textwidth]{dhl.png}
+        \caption{Zrzut ekranu przedstawiający działającą aplikację. Firma dla której przedstawione są wykresy to DHL.}
+        \label{fig:dhl}
+    \end{figure}
     
-    
+    \subsection{Wykonanie zadań z trzeciego kamienia milowego}
+    W ostatnim etapie prac zwiększyliśmy czas przeznaczony na pracę nad projektem. Dzięki temu wykonaliśmy wszystkie zadania wyznaczone w trzecim etapie prac. Praca nad aplikacją internetową przebiegała sprawnie, ponieważ część zespołu miała już doświadczenie w technologii Dash, której używaliśmy.
+
+    \section{Podsumowanie}
+
+    Podczas pracy nad tym projektem naprawdę dużo się nauczyliśmy. Poznaliśmy wiele narzędzi oraz technologii. Poznaliśmy technologie Big Data oraz uczenia maszynowego. Poszerzyliśmy swoją wiedzę techniczną o wdrażanie aplikacji internetowych oraz korzystanie z chmury MS Azure. Uważamy jednak, że najważniejszą rzeczą, którą nauczyliśmy się podczas pracy nad projektem to zarządzanie projektami oraz sprawy z nim powiązane. Nie mieliśmy wcześniej szansy pracy przy tak dużym i długoterminowym projekcie, więc była to dla nas możliwość zdobycia cennego doświadczenia. Staraliśmy się planować pracę oraz dbać o dobrą komunikację, jednak musieliśmy zmierzyć się  z brakiem doświadczenia. Uważamy, że zrealizowaliśmy założenia projektowe oraz wiele nauczyliśmy sie podczas pracy nad projektem.
+
+
 % \subsubsection{Budowa aplikacji}
 
 % \subsection{Kamienie milowe:}

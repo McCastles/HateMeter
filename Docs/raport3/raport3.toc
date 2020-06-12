@@ -1,0 +1,36 @@
+\babel@toc {polish}{}
+\babel@toc {polish}{}
+\contentsline {section}{\numberline {1}Etap 1 - Zbieranie danych}{4}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Opis}{4}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Zadania}{4}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Analiza dost\IeC {\k e}pno\IeC {\'s}ci API medi\IeC {\'o}w spo\IeC {\l }eczno\IeC {\'s}ciowych}{4}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Analiza dost\IeC {\k e}pnej infrasturktury do przetwarzania danych.}{4}{subsubsection.1.2.2}% 
+\contentsline {subsubsection}{\numberline {1.2.3}Analiza i wyb\IeC {\'o}r sposobu wdro\IeC {\.z}enia aplikacji (rozwi\IeC {\k a}zania chmurowe)}{4}{subsubsection.1.2.3}% 
+\contentsline {subsubsection}{\numberline {1.2.4}Wyb\IeC {\'o}r odpowiedniej bazy do sk\IeC {\l }adowanych danych (por\IeC {\'o}wnanie SQL i noSQL)}{5}{subsubsection.1.2.4}% 
+\contentsline {subsubsection}{\numberline {1.2.5}Stworzenie programu pobieraj\IeC {\k a}cego dane z Twittera}{5}{subsubsection.1.2.5}% 
+\contentsline {subsubsection}{\numberline {1.2.6}Stworzenie programu pobieraj\IeC {\k a}cego dane z Facebooka}{6}{subsubsection.1.2.6}% 
+\contentsline {subsubsection}{\numberline {1.2.7}Instalacja wybranej bazy}{6}{subsubsection.1.2.7}% 
+\contentsline {subsubsection}{\numberline {1.2.8}Po\IeC {\l }\IeC {\k a}czenie bazy danych z programami pobieraj\IeC {\k a}cymi dane}{6}{subsubsection.1.2.8}% 
+\contentsline {subsubsection}{\numberline {1.2.9}Pobranie danych do bazy danych}{6}{subsubsection.1.2.9}% 
+\contentsline {subsubsection}{\numberline {1.2.10}Analiza dost\IeC {\k e}pnych zbior\IeC {\'o}w opisanych klasami, pozwalaj\IeC {\k a}cych na testowanie algorytmu}{6}{subsubsection.1.2.10}% 
+\contentsline {subsection}{\numberline {1.3}Wykonanie zada\IeC {\'n} z pierwszego kamienia milowego}{7}{subsection.1.3}% 
+\contentsline {section}{\numberline {2}Etap 2 - Przetwarzanie danych}{7}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Opis}{7}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Zadania}{7}{subsection.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.1}Budowa infrastruktury do przetwarzania danych}{7}{subsubsection.2.2.1}% 
+\contentsline {subsubsection}{\numberline {2.2.2}Instalacja narz\IeC {\k e}dzi do przetwarzania danych}{8}{subsubsection.2.2.2}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Baza Danych}{9}{subsubsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.4}Potok przetwarzania danych w projekcie}{9}{subsubsection.2.2.4}% 
+\contentsline {subsubsection}{\numberline {2.2.5}Udoskonalenie programu do pobierania danych z Twittera}{10}{subsubsection.2.2.5}% 
+\contentsline {subsubsection}{\numberline {2.2.6}Stworzenie modelu do analizy sentyment\IeC {\'o}w}{11}{subsubsection.2.2.6}% 
+\contentsline {subsubsection}{\numberline {2.2.7}Stworzenie programu do pobierania danych z Facebooka}{12}{subsubsection.2.2.7}% 
+\contentsline {subsection}{\numberline {2.3}Wykonanie zada\IeC {\'n} z drugiego kamienia milowego}{13}{subsection.2.3}% 
+\contentsline {section}{\numberline {3}Etap 3 - Prace ko\IeC {\'n}cowe}{13}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Opis}{13}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Zadania}{13}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Pobieranie tweet\IeC {\'o}w w czasie rzeczywistym}{13}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Pobieranie i przetwarzanie tweet\IeC {\'o}w z Kafki}{13}{subsubsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Przetworzenie danych historycznych}{14}{subsubsection.3.2.3}% 
+\contentsline {subsubsection}{\numberline {3.2.4}Budowa aplikacji do wizualizacji}{14}{subsubsection.3.2.4}% 
+\contentsline {subsection}{\numberline {3.3}Wykonanie zada\IeC {\'n} z trzeciego kamienia milowego}{15}{subsection.3.3}% 
+\contentsline {section}{\numberline {4}Podsumowanie}{16}{section.4}% 
